@@ -19,20 +19,18 @@ async function main() {
 
 }
 
-let chat1 = new Chat({
-    from: "ritesh",
-    to: "rohit",
-    msg: "send me your notes",
-    created_at: new Date()
-});
+// index Route
+app.get("/chats",async(req,res)=>{
+  let chats = await  Chat.find();
+  console.log(chats);
+  res.send("working")
+})
 
-chat1.save().then(res => {
-    console.log(res);
-});
+
 
 app.get("/", (req, res) => {
 
-    res.send("root is working")
+    res.render("index.ejs",{chats})
 
 })
 app.listen(8080, () => {
