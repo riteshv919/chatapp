@@ -8,8 +8,9 @@ const app = express();
 const mongoose = require('mongoose');
 const path = require("path");
 
-app.set("views",path.join(__dirname,"views"));
-app.set("view engine","ejs");
+const Chat = require("./models/chat")
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 main().catch(err => console.log(err));
 
@@ -18,6 +19,16 @@ async function main() {
 
 }
 
+let chat1 = new Chat({
+    from: "ritesh",
+    to: "rohit",
+    msg: "send me your notes",
+    created_at: new Date()
+});
+
+chat1.save().then(res => {
+    console.log(res);
+});
 
 app.get("/", (req, res) => {
 
