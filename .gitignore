@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables file
+.env
+
+# MongoDB database files
+*.db
+
+# IDE or editor folders (e.g., VS Code, Sublime Text, etc.)
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Build directories or distribution folders
+dist/
+build/
+
+# Optional: test coverage or temporary files
+coverage/
